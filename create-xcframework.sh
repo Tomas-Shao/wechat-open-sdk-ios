@@ -34,6 +34,7 @@ xcodebuild -create-xcframework \
 -framework "build/iphonesimulator.xcarchive/Products/Library/Frameworks/WechatOpenSDK.framework" \
 -output "build/WechatOpenSDK.xcframework"
 
-zip -r WechatOpenSDK.xcframework.zip build/WechatOpenSDK.xcframework
+cd build && zip -r ../WechatOpenSDK.xcframework.zip WechatOpenSDK.xcframework
+cd ..
 
 swift package compute-checksum WechatOpenSDK.xcframework.zip
