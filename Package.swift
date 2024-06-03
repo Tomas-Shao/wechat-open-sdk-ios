@@ -1,17 +1,21 @@
-// swift-tools-version: 5.5
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
+// swift-tools-version:5.3
 import PackageDescription
 
 let package = Package(
     name: "WechatOpenSDK",
-    products: [
-        .library(name: "WechatOpenSDK", targets: ["WechatOpenSDK"]),
+    platforms: [
+        .iOS(.v10)
     ],
-    dependencies: [
+    products: [
+        .library(
+            name: "WechatOpenSDK",
+            targets: ["WechatOpenSDK"]
+        ),
     ],
     targets: [
-        .binaryTarget(name: "WechatOpenSDK",
-                      path: "WechatOpenSDK.xcframework")
+        .binaryTarget(
+            name: "WechatOpenSDK",
+            path: "./Sources/WechatOpenSDK/WechatOpenSDK.xcframework"
+        )
     ]
 )
